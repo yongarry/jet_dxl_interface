@@ -19,38 +19,38 @@
  * library cannot have, but the consuming code must have inorder to link.
  */
 
-#ifndef DYNAMIXEL_HARDWARE_INTERFACE__VISIBILITY_CONTROL_H_
-#define DYNAMIXEL_HARDWARE_INTERFACE__VISIBILITY_CONTROL_H_
+#ifndef JET_DXL_INTERFACE__VISIBILITY_CONTROL_H_
+#define JET_DXL_INTERFACE__VISIBILITY_CONTROL_H_
 
 // This logic was borrowed (then namespaced) from the examples on the gcc wiki:
 //     https://gcc.gnu.org/wiki/Visibility
 
 #if defined _WIN32 || defined __CYGWIN__
 #ifdef __GNUC__
-#define DYNAMIXEL_HARDWARE_INTERFACE_EXPORT __attribute__((dllexport))
-#define DYNAMIXEL_HARDWARE_INTERFACE_IMPORT __attribute__((dllimport))
+#define JET_DXL_INTERFACE_EXPORT __attribute__((dllexport))
+#define JET_DXL_INTERFACE_IMPORT __attribute__((dllimport))
 #else
-#define DYNAMIXEL_HARDWARE_INTERFACE_EXPORT __declspec(dllexport)
-#define DYNAMIXEL_HARDWARE_INTERFACE_IMPORT __declspec(dllimport)
+#define JET_DXL_INTERFACE_EXPORT __declspec(dllexport)
+#define JET_DXL_INTERFACE_IMPORT __declspec(dllimport)
 #endif
-#ifdef DYNAMIXEL_HARDWARE_INTERFACE_BUILDING_DLL
-#define DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC DYNAMIXEL_HARDWARE_INTERFACE_EXPORT
+#ifdef JET_DXL_INTERFACE_BUILDING_DLL
+#define JET_DXL_INTERFACE_PUBLIC JET_DXL_INTERFACE_EXPORT
 #else
-#define DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC DYNAMIXEL_HARDWARE_INTERFACE_IMPORT
+#define JET_DXL_INTERFACE_PUBLIC JET_DXL_INTERFACE_IMPORT
 #endif
-#define DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC_TYPE DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC
-#define DYNAMIXEL_HARDWARE_INTERFACE_LOCAL
+#define JET_DXL_INTERFACE_PUBLIC_TYPE JET_DXL_INTERFACE_PUBLIC
+#define JET_DXL_INTERFACE_LOCAL
 #else
-#define DYNAMIXEL_HARDWARE_INTERFACE_EXPORT __attribute__((visibility("default")))
-#define DYNAMIXEL_HARDWARE_INTERFACE_IMPORT
+#define JET_DXL_INTERFACE_EXPORT __attribute__((visibility("default")))
+#define JET_DXL_INTERFACE_IMPORT
 #if __GNUC__ >= 4
-#define DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC __attribute__((visibility("default")))
-#define DYNAMIXEL_HARDWARE_INTERFACE_LOCAL __attribute__((visibility("hidden")))
+#define JET_DXL_INTERFACE_PUBLIC __attribute__((visibility("default")))
+#define JET_DXL_INTERFACE_LOCAL __attribute__((visibility("hidden")))
 #else
-#define DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC
-#define DYNAMIXEL_HARDWARE_INTERFACE_LOCAL
+#define JET_DXL_INTERFACE_PUBLIC
+#define JET_DXL_INTERFACE_LOCAL
 #endif
-#define DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC_TYPE
+#define JET_DXL_INTERFACE_PUBLIC_TYPE
 #endif
 
-#endif  // DYNAMIXEL_HARDWARE_INTERFACE__VISIBILITY_CONTROL_H_
+#endif  // JET_DXL_INTERFACE__VISIBILITY_CONTROL_H_

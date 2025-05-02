@@ -14,8 +14,8 @@
 //
 // Authors: Hye-Jong KIM, Sungho Woo
 
-#ifndef DYNAMIXEL_HARDWARE_INTERFACE__DYNAMIXEL_HARDWARE_INTERFACE_HPP_
-#define DYNAMIXEL_HARDWARE_INTERFACE__DYNAMIXEL_HARDWARE_INTERFACE_HPP_
+#ifndef JET_DXL_INTERFACE__JET_DXL_INTERFACE_HPP_
+#define JET_DXL_INTERFACE__JET_DXL_INTERFACE_HPP_
 
 #include <memory>
 #include <string>
@@ -30,8 +30,8 @@
 #include "hardware_interface/system_interface.hpp"
 #include "hardware_interface/types/hardware_interface_return_values.hpp"
 
-#include "dynamixel_hardware_interface/visibility_control.h"
-#include "dynamixel_hardware_interface/dynamixel/dynamixel.hpp"
+#include "jet_dxl_interface/visibility_control.h"
+#include "jet_dxl_interface/dynamixel/dynamixel.hpp"
 
 #include "dynamixel_interfaces/msg/dynamixel_state.hpp"
 #include "dynamixel_interfaces/srv/get_data_from_dxl.hpp"
@@ -51,7 +51,7 @@
 // #define GOAL_VELOCITY_INDEX 1  // TODO: to be implemented
 #define GOAL_CURRENT_INDEX 1
 
-namespace dynamixel_hardware_interface
+namespace jet_dxl_interface
 {
 
 /**
@@ -119,7 +119,7 @@ public:
    * @param info Hardware information for the system.
    * @return Callback return indicating success or error.
    */
-  DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC
+  JET_DXL_INTERFACE_PUBLIC
   hardware_interface::CallbackReturn on_init(const hardware_interface::HardwareInfo & info)
   override;
 
@@ -127,14 +127,14 @@ public:
    * @brief Exports state interfaces for ROS2.
    * @return A vector of state interfaces.
    */
-  DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC
+  JET_DXL_INTERFACE_PUBLIC
   std::vector<hardware_interface::StateInterface> export_state_interfaces() override;
 
   /**
    * @brief Exports command interfaces for ROS2.
    * @return A vector of command interfaces.
    */
-  DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC
+  JET_DXL_INTERFACE_PUBLIC
   std::vector<hardware_interface::CommandInterface> export_command_interfaces() override;
 
   /**
@@ -142,7 +142,7 @@ public:
    * @param previous_state Previous lifecycle state.
    * @return Callback return indicating success or error.
    */
-  DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC
+  JET_DXL_INTERFACE_PUBLIC
   hardware_interface::CallbackReturn on_activate(const rclcpp_lifecycle::State & previous_state)
   override;
 
@@ -151,7 +151,7 @@ public:
    * @param previous_state Previous lifecycle state.
    * @return Callback return indicating success or error.
    */
-  DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC
+  JET_DXL_INTERFACE_PUBLIC
   hardware_interface::CallbackReturn on_deactivate(const rclcpp_lifecycle::State & previous_state)
   override;
 
@@ -161,7 +161,7 @@ public:
    * @param period Duration since the last read.
    * @return Hardware interface return type indicating success or error.
    */
-  DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC
+  JET_DXL_INTERFACE_PUBLIC
   hardware_interface::return_type  read(
     const rclcpp::Time & time, const rclcpp::Duration & period) override;
 
@@ -171,7 +171,7 @@ public:
    * @param period Duration since the last write.
    * @return Hardware interface return type indicating success or error.
    */
-  DYNAMIXEL_HARDWARE_INTERFACE_PUBLIC
+  JET_DXL_INTERFACE_PUBLIC
   hardware_interface::return_type  write(
     const rclcpp::Time & time, const rclcpp::Duration & period) override;
 
@@ -362,6 +362,6 @@ private:
   double prismaticToRevolute(double prismatic_value);
 };
 
-}  // namespace dynamixel_hardware_interface
+}  // namespace jet_dxl_interface
 
-#endif  // DYNAMIXEL_HARDWARE_INTERFACE__DYNAMIXEL_HARDWARE_INTERFACE_HPP_
+#endif  // JET_DXL_INTERFACE__JET_DXL_INTERFACE_HPP_

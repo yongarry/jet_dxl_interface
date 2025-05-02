@@ -14,12 +14,12 @@
 //
 // Authors: Hye-Jong KIM, Sungho Woo
 
-#include "dynamixel_hardware_interface/dynamixel/dynamixel_info.hpp"
+#include "jet_dxl_interface/dynamixel/dynamixel_info.hpp"
 #include <string>
 #include <utility>
 #include <vector>
 
-namespace dynamixel_hardware_interface
+namespace jet_dxl_interface
 {
 
 void DynamixelInfo::SetDxlModelFolderPath(const char * path)
@@ -194,4 +194,4 @@ double DynamixelInfo::ConvertValueToRadian(uint8_t id, int32_t value)
     return 0.0;
   }
 }
-}  // namespace dynamixel_hardware_interface
+}  // namespace jet_dxl_interface

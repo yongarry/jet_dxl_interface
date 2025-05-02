@@ -14,7 +14,7 @@
 //
 // Authors: Hye-Jong KIM, Sungho Woo
 
-#include "dynamixel_hardware_interface/dynamixel/dynamixel.hpp"
+#include "jet_dxl_interface/dynamixel/dynamixel.hpp"
 
 #include <queue>
 #include <vector>
@@ -22,7 +22,7 @@
 #include <memory>
 #include <functional>
 
-namespace dynamixel_hardware_interface
+namespace jet_dxl_interface
 {
 
 Dynamixel::Dynamixel(const char * path)
@@ -1357,4 +1357,4 @@ DxlError Dynamixel::AddIndirectWrite(
 
   return DxlError::OK;
 }
-}  // namespace dynamixel_hardware_interface
+}  // namespace jet_dxl_interface

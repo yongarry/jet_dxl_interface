@@ -2,7 +2,7 @@
 # Set minimum required version of cmake, project name and compile options
 ################################################################################
 cmake_minimum_required(VERSION 3.5)
-project(dynamixel_hardware_interface)
+project(jet_dxl_interface)
 
 if(NOT CMAKE_CXX_STANDARD)
   set(CMAKE_CXX_STANDARD 14)
@@ -31,7 +31,7 @@ find_package(dynamixel_interfaces REQUIRED)
 add_library(
   ${PROJECT_NAME}
   SHARED
-  src/dynamixel_hardware_interface.cpp
+  src/jet_dxl_interface.cpp
   src/dynamixel/dynamixel_info.cpp
   src/dynamixel/dynamixel.cpp
 )
@@ -53,7 +53,7 @@ ament_target_dependencies(
   realtime_tools
 )
 
-pluginlib_export_plugin_description_file(hardware_interface dynamixel_hardware_interface_plugin.xml)
+pluginlib_export_plugin_description_file(hardware_interface jet_dxl_interface_plugin.xml)
 
 ################################################################################
 # Install

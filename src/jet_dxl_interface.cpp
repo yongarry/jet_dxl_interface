@@ -14,7 +14,7 @@
 //
 // Authors: Hye-Jong KIM, Sungho Woo
 
-#include "dynamixel_hardware_interface/dynamixel_hardware_interface.hpp"
+#include "jet_dxl_interface/jet_dxl_interface.hpp"
 
 #include <chrono>
 #include <cmath>
@@ -26,12 +26,12 @@
 #include "hardware_interface/types/hardware_interface_type_values.hpp"
 #include "rclcpp/rclcpp.hpp"
 
-namespace dynamixel_hardware_interface
+namespace jet_dxl_interface
 {
 
 DynamixelHardware::DynamixelHardware()
-: rclcpp::Node("dynamixel_hardware_interface"),
-  logger_(rclcpp::get_logger("dynamixel_hardware_interface"))
+: rclcpp::Node("jet_dxl_interface"),
+  logger_(rclcpp::get_logger("jet_dxl_interface"))
 {
   dxl_status_ = DXL_OK;
   dxl_torque_status_ = TORQUE_ENABLED;
@@ -94,7 +94,7 @@ hardware_interface::CallbackReturn DynamixelHardware::on_init(
   std::string dxl_model_folder = info_.hardware_parameters["dynamixel_model_folder"];
   dxl_comm_ = std::unique_ptr<Dynamixel>(
     new Dynamixel(
-      (ament_index_cpp::get_package_share_directory("dynamixel_hardware_interface") +
+      (ament_index_cpp::get_package_share_directory("jet_dxl_interface") +
       dxl_model_folder).c_str()));
 
   RCLCPP_INFO_STREAM(logger_, "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
@@ -1156,11 +1156,11 @@ double DynamixelHardware::prismaticToRevolute(double prismatic_value)
   return (prismatic_value - conversion_intercept_) / conversion_slope_;
 }
 
-}  // namespace dynamixel_hardware_interface
+}  // namespace jet_dxl_interface
 
 #include "pluginlib/class_list_macros.hpp"
 
 PLUGINLIB_EXPORT_CLASS(
-  dynamixel_hardware_interface::DynamixelHardware,
+  jet_dxl_interface::DynamixelHardware,
   hardware_interface::SystemInterface
 )

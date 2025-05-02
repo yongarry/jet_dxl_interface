@@ -14,10 +14,10 @@
 //
 // Authors: Hye-Jong KIM, Sungho Woo
 
-#ifndef DYNAMIXEL_HARDWARE_INTERFACE__DYNAMIXEL__DYNAMIXEL_HPP_
-#define DYNAMIXEL_HARDWARE_INTERFACE__DYNAMIXEL__DYNAMIXEL_HPP_
+#ifndef JET_DXL_INTERFACE__DYNAMIXEL__DYNAMIXEL_HPP_
+#define JET_DXL_INTERFACE__DYNAMIXEL__DYNAMIXEL_HPP_
 
-#include "dynamixel_hardware_interface/dynamixel/dynamixel_info.hpp"
+#include "jet_dxl_interface/dynamixel/dynamixel_info.hpp"
 #include "dynamixel_sdk/dynamixel_sdk.h"
 
 #include <map>
@@ -29,7 +29,7 @@
 #include <memory>
 #include <functional>
 
-namespace dynamixel_hardware_interface
+namespace jet_dxl_interface
 {
 
 /// @brief Control modes for Dynamixel motors.
@@ -252,6 +252,6 @@ private:
     uint8_t item_size);
 };
 
-}  // namespace dynamixel_hardware_interface
+}  // namespace jet_dxl_interface
 
-#endif  // DYNAMIXEL_HARDWARE_INTERFACE__DYNAMIXEL__DYNAMIXEL_HPP_
+#endif  // JET_DXL_INTERFACE__DYNAMIXEL__DYNAMIXEL_HPP_

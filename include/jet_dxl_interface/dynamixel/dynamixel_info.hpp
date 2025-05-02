@@ -14,8 +14,8 @@
 //
 // Authors: Hye-Jong KIM, Sungho Woo
 
-#ifndef DYNAMIXEL_HARDWARE_INTERFACE__DYNAMIXEL__DYNAMIXEL_INFO_HPP_
-#define DYNAMIXEL_HARDWARE_INTERFACE__DYNAMIXEL__DYNAMIXEL_INFO_HPP_
+#ifndef JET_DXL_INTERFACE__DYNAMIXEL__DYNAMIXEL_INFO_HPP_
+#define JET_DXL_INTERFACE__DYNAMIXEL__DYNAMIXEL_INFO_HPP_
 
 #include <cmath>
 #include <cstring>
@@ -28,7 +28,7 @@
 
 #include <boost/algorithm/string.hpp>
 
-namespace dynamixel_hardware_interface
+namespace jet_dxl_interface
 {
 
 typedef struct
@@ -92,6 +92,6 @@ public:
   {return static_cast<int32_t>(vel_rps * 100.0 * 60.0 / 2.0 / M_PI);}
 };
 
-}  // namespace dynamixel_hardware_interface
+}  // namespace jet_dxl_interface
 
-#endif  // DYNAMIXEL_HARDWARE_INTERFACE__DYNAMIXEL__DYNAMIXEL_INFO_HPP_
+#endif  // JET_DXL_INTERFACE__DYNAMIXEL__DYNAMIXEL_INFO_HPP_

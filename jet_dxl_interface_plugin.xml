@@ -1,0 +1,9 @@
+<library path="jet_dxl_interface">
+  <class name="jet_dxl_interface/DynamixelHardware"
+         type="jet_dxl_interface::DynamixelHardware"
+         base_class_type="hardware_interface::SystemInterface">
+    <description>
+      dynamixel_hardware_interface for jet
+    </description>
+  </class>
+</library>
